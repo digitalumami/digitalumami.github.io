@@ -155,6 +155,23 @@
             font-weight: 400;
         }
 
+        .consent-text {
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            text-align: left;
+        }
+
+        .consent-text a {
+            color: #ff70a5;
+            text-decoration: none;
+        }
+
+        .consent-text a:hover {
+            text-decoration: underline;
+        }
+
         .email-form {
             display: flex;
             flex-direction: column;
@@ -351,6 +368,9 @@
                     required
                     id="emailInput"
                 >
+                <div class="consent-text">
+                    By subscribing, you consent to receive marketing emails from Digital Umami. We respect your privacy and will only use your email for newsletter updates. You can unsubscribe at any time. View our <a href="#privacy-policy">Privacy Policy</a> for more details.
+                </div>
                 <button type="submit" class="signup-btn">Join Newsletter</button>
             </form>
         </div>
@@ -358,7 +378,10 @@
 
     <!-- Footer -->
     <footer>
-        <a href="mailto:hello@digitalumami.com" class="footer-email">hello@digitalumami.com</a>
+        <div style="display: flex; gap: 20px; align-items: center;">
+            <a href="mailto:hello@digitalumami.com" class="footer-email">hello@digitalumami.com</a>
+            <a href="#privacy-policy" class="footer-btn">Privacy Policy</a>
+        </div>
         <div class="footer-buttons">
             <a href="#" class="footer-btn">Press Kit</a>
         </div>

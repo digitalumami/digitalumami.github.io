@@ -8,7 +8,9 @@
 }
 
 body {
-    font-family: 'variex', 'Helvetica Neue', Arial, sans-serif;
+    font-family: "variex", sans-serif;
+    font-weight: 300;
+    font-style: normal;
     height: 100vh;
     background: #000;
     color: white;

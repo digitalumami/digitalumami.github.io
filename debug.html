@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debug - Background Image Loading</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #000;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+        
+        .debug-container {
+            background: rgba(255,255,255,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+        }
+        
+        .test-image {
+            max-width: 300px;
+            max-height: 200px;
+            border: 2px solid #ff70a5;
+            margin: 10px 0;
+        }
+        
+        .background-test {
+            width: 100%;
+            height: 200px;
+            border: 2px solid #ff70a5;
+            margin: 10px 0;
+            background-size: cover;
+            background-position: center;
+            position: relative;
+        }
+        
+        .status {
+            padding: 5px 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+        
+        .success { background: #4CAF50; }
+        .error { background: #f44336; }
+        .warning { background: #ff9800; }
+    </style>
+</head>
+<body>
+    <h1>🔍 Background Image Debug Tool</h1>
+    
+    <div class="debug-container">
+        <h2>1. Direct Image Test</h2>
+        <p>Testing if the image loads as a regular &lt;img&gt; tag:</p>
+        <img src="assets/images/background.png" alt="Test Image" class="test-image" id="testImg">
+        <div id="imgStatus" class="status warning">Testing...</div>
+    </div>
+    
+    <div class="debug-container">
+        <h2>2. File Path Variations</h2>
+        <p>Testing different possible paths:</p>
+        
+        <h3>Path: assets/images/background.png</h3>
+        <img src="assets/images/background.png" alt="Test 1" class="test-image" id="test1">
+        <div id="status1" class="status warning">Testing...</div>
+        
+        <h3>Path: ./assets/images/background.png</h3>
+        <img src="./assets/images/background.png" alt="Test 2" class="test-image" id="test2">
+        <div id="status2" class="status warning">Testing...</div>
+        
+        <h3>Path: /assets/images/background.png</h3>
+        <img src="/assets/images/background.png" alt="Test 3" class="test-image" id="test3">
+        <div id="status3" class="status warning">Testing...</div>
+    </div>
+    
+    <div class="debug-container">
+        <h2>3. File Format Tests</h2>
+        
+        <h3>PNG Format</h3>
+        <img src="assets/images/background.png" alt="PNG Test" class="test-image" id="pngTest">
+        <div id="pngStatus" class="status warning">Testing...</div>
+        
+        <h3>JPG Format</h3>
+        <img src="assets/images/background.jpg" alt="JPG Test" class="test-image" id="jpgTest">
+        <div id="jpgStatus" class="status warning">Testing...</div>
+        
+        <h3>JPEG Format</h3>
+        <img src="assets/images/background.jpeg" alt="JPEG Test" class="test-image" id="jpegTest">
+        <div id="jpegStatus" class="status warning">Testing...</div>
+    </div>
+    
+    <div class="debug-container">
+        <h2>4. CSS Background Test</h2>
+        <p>Testing as CSS background-image:</p>
+        <div class="background-test" id="bgTest" style="background-image: url('assets/images/background.png');">
+            <div style="background: rgba(0,0,0,0.7); padding: 10px; color: white;">
+                Background image should appear behind this text
+            </div>
+        </div>
+        <div id="bgStatus" class="status warning">Check if you see the background image above</div>
+    </div>
+    
+    <div class="debug-container">
+        <h2>5. File Structure Check</h2>
+        <p>Your expected file structure should be:</p>
+        <pre style="background: rgba(255,255,255,0.1); padding: 10px; border-radius: 5px;">
+your-repo/
+├── index.html
+├── debug.html (this page)
+└── assets/
+    └── images/
+        ├── background.png  ← This file
+        ├── logo.png
+        └── gamelogo.png
+        </pre>
+    </div>
+    
+    <div class="debug-container">
+        <h2>📋 Results Summary</h2>
+        <div id="summary">
+            <p>Results will appear here after testing...</p>
+        </div>
+    </div>
+
+    <script>
+        // Test all images
+        const tests = [
+            { id: 'testImg', statusId: 'imgStatus', name: 'Main Test' },
+            { id: 'test1', statusId: 'status1', name: 'Path 1' },
+            { id: 'test2', statusId: 'status2', name: 'Path 2' },
+            { id: 'test3', statusId: 'status3', name: 'Path 3' },
+            { id: 'pngTest', statusId: 'pngStatus', name: 'PNG Format' },
+            { id: 'jpgTest', statusId: 'jpgStatus', name: 'JPG Format' },
+            { id: 'jpegTest', statusId: 'jpegStatus', name: 'JPEG Format' }
+        ];
+        
+        const results = [];
+        let completedTests = 0;
+        
+        tests.forEach(test => {
+            const img = document.getElementById(test.id);
+            const status = document.getElementById(test.statusId);
+            
+            img.onload = function() {
+                status.textContent = `✅ SUCCESS - ${test.name} loaded! (${img.naturalWidth}x${img.naturalHeight})`;
+                status.className = 'status success';
+                results.push({ name: test.name, status: 'success', src: img.src });
+                checkComplete();
+            };
+            
+            img.onerror = function() {
+                status.textContent = `❌ FAILED - ${test.name} could not load`;
+                status.className = 'status error';
+                results.push({ name: test.name, status: 'error', src: img.src });
+                checkComplete();
+            };
+        });
+        
+        function checkComplete() {
+            completedTests++;
+            if (completedTests === tests.length) {
+                generateSummary();
+            }
+        }
+        
+        function generateSummary() {
+            const summary = document.getElementById('summary');
+            const successful = results.filter(r => r.status === 'success');
+            const failed = results.filter(r => r.status === 'error');
+            
+            let html = '<h3>🎯 Diagnosis:</h3>';
+            
+            if (successful.length > 0) {
+                html += '<div class="status success">✅ Working paths found:</div>';
+                successful.forEach(result => {
+                    html += `<p>• ${result.name}: <code>${result.src}</code></p>`;
+                });
+                
+                html += '<h4>💡 Solution:</h4>';
+                html += `<p>Use this working path in your CSS/HTML: <code>${successful[0].src}</code></p>`;
+            } else {
+                html += '<div class="status error">❌ No images loaded successfully</div>';
+                html += '<h4>🔧 Troubleshooting:</h4>';
+                html += '<ul>';
+                html += '<li>Check if the file exists in the assets/images/ folder</li>';
+                html += '<li>Check file name spelling and capitalization</li>';
+                html += '<li>Check file permissions</li>';
+                html += '<li>Try uploading the image file again</li>';
+                html += '<li>Check if GitHub Pages is enabled for your repo</li>';
+                html += '</ul>';
+            }
+            
+            summary.innerHTML = html;
+        }
+        
+        // Console logging for additional debugging
+        console.log('Current page URL:', window.location.href);
+        console.log('Testing image paths...');
+    </script>
+</body>
+</html>

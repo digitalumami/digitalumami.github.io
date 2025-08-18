@@ -183,14 +183,14 @@ header {
 .signup-box h1 {
     font-size: 2.5rem;
     font-weight: 400;
-    margin-bottom: 20px;
+    margin-bottom: 0.5%;
     color: #000;
     letter-spacing: -0.02em;
 }
 
 .signup-box p {
     font-size: 1.1rem;
-    margin-bottom: 40px;
+    margin-bottom: 2%;
     color: #333;
     line-height: 1.6;
     font-weight: 400;
@@ -240,9 +240,9 @@ header {
     background: #ff70a5;
     color: white;
     border: none;
-    border-radius: 12px;
-    font-size: 1.1rem;
-    font-weight: 600;
+    border-radius: 2%;
+    font-size: 1rem;
+    font-weight: 500;
     font-family: inherit;
     cursor: pointer;
     transition: all 0.3s ease;

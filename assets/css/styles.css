@@ -11,11 +11,15 @@ body {
     font-family: "grenadine-mvb", sans-serif;
     font-weight: 300;
     font-style: normal;
-    height: 100vh;
+    min-height: 100vh;        /* allow taller screens */
     background: #000;
     color: white;
-    overflow: hidden;
+    overflow-x: hidden;       /* allow vertical scrolling */
     position: relative;
+
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 h1 {
@@ -151,20 +155,23 @@ header {
 .main-container {
     position: relative;
     z-index: 100;
-    height: 100vh;
+    min-height: 100vh;        /* allow growing with content */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 0 20px;
+    padding: 80px 20px 120px; /* space for header + footer */
+    box-sizing: border-box;
+    flex: 1;
 }
 
 /* Signup Box */
 .signup-box {
+    transform: scale(0.85); /* ~15% smaller */
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: 60px 50px;
-    max-width: 750px;
+    padding: 40px 30px;       /* smaller padding for mobile */
+    max-width: 600px;
     width: 100%;
     text-align: center;
     box-shadow: 0 20px 60px rgba(255, 112, 165, 0.2);
@@ -254,16 +261,22 @@ header {
 
 /* Footer */
 footer {
-    position: fixed;
-    bottom: 0;
+    position: relative;   /* not fixed anymore */
+    bottom: auto;
     width: 100%;
-    padding: 25px 40px;
+    padding: 25px 20px;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1000;
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    gap: 15px;
+    text-align: left;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: space-between;
+    margin-top: auto;
+
 }
 
 .footer-email {
@@ -368,4 +381,17 @@ footer {
     .signup-btn {
         padding: 15px 18px;
     }
+}
+
+@media (min-width: 769px) {
+  footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  .main-container {
+    padding-bottom: 120px; /* space so box doesn’t overlap footer */
+  }
 }

@@ -134,10 +134,13 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 1% 5%;
+    padding: 0 5%;
     z-index: 1000;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    height: 70px; /* Define explicit height for calculations */
+    display: flex;
+    align-items: center; /* Center items vertically */
 }
 
 .logo {
@@ -155,14 +158,15 @@ header {
 .main-container {
     position: relative;
     z-index: 100;
-    min-height: 100vh;        /* allow growing with content */
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10% 10% 10% 10%; /* space for header + footer */
-    /*padding-bottom: 10%;*/
+    padding: 20px 10%;
     box-sizing: border-box;
     flex: 1;
+    /* Dynamic height calculation to avoid header/footer overlap */
+    min-height: calc(100vh - 165px); /* 70px header + ~95px footer with padding */
+    margin-top: 70px; /* Push down from fixed header */
 }
 
 /* Signup Box */
@@ -261,10 +265,11 @@ header {
 
 /* Footer */
 footer {
-    position: relative;   /* not fixed anymore */
-    bottom: auto;
+    position: fixed;
+    bottom: 0; /* Footer extends to bottom edge */
+    left: 0;
     width: 100%;
-    padding: 1% 5%;
+    padding: 15px 5% 25px 5%; /* Extra bottom padding to avoid taskbar */
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -275,8 +280,8 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-top: auto;
-
+    height: auto; /* Let height adjust to content + padding */
+    min-height: 70px; /* Minimum height to maintain consistency */
 }
 
 .footer-email {
@@ -336,9 +341,30 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    header {
+        position: relative; /* Not fixed on mobile */
+        height: auto;
+    }
+    
+    footer {
+        position: relative; /* Not fixed on mobile */
+        height: auto;
+        margin-top: auto;
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+    
+    .main-container {
+        margin-top: 0; /* No margin needed when header is relative */
+        min-height: auto; /* Let it size naturally on mobile */
+        padding: 40px 20px;
+    }
+
     .signup-box {
-        padding: 40% 30%;
-        margin: 0 20%;
+        max-width: 90%;
+        padding: 30px 20px;
+        margin: 0;
     }
 
     .signup-box h1 {
@@ -349,18 +375,8 @@ footer {
         font-size: 1rem;
     }
 
-    footer {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-
     .footer-buttons {
         justify-content: center;
-    }
-
-    header {
-        padding: 15px 20px;
     }
 }
 
@@ -383,11 +399,9 @@ footer {
     }
 }
 
+/* Larger screens - ensure proper spacing */
 @media (min-width: 769px) {
-  footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-  }
+    .main-container {
+        margin-bottom: 95px; /* Add bottom margin to avoid footer overlap (~70px footer + 25px bottom padding) */
+    }
 }

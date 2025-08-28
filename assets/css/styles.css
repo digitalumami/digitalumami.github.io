@@ -134,7 +134,7 @@ header {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 40px;
+    padding: 1% 5%;
     z-index: 1000;
     background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
@@ -159,7 +159,8 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 80px 20px 120px; /* space for header + footer */
+    padding: 10% 10% 10% 10%; /* space for header + footer */
+    /*padding-bottom: 10%;*/
     box-sizing: border-box;
     flex: 1;
 }
@@ -170,9 +171,8 @@ header {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(20px);
     border-radius: 20px;
-    padding: 40px 30px;       /* smaller padding for mobile */
-    max-width: 600px;
-    width: 100%;
+    padding: 2% 2%;       /* smaller padding for mobile */
+    max-width: 30%;
     text-align: center;
     box-shadow: 0 20px 60px rgba(255, 112, 165, 0.2);
     border: 1px solid rgba(255, 112, 165, 0.1);
@@ -264,7 +264,7 @@ footer {
     position: relative;   /* not fixed anymore */
     bottom: auto;
     width: 100%;
-    padding: 25px 20px;
+    padding: 1% 5%;
     background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     z-index: 1000;
@@ -292,11 +292,11 @@ footer {
 
 .footer-buttons {
     display: flex;
-    gap: 15px;
+    gap: 15%;
 }
 
 .footer-btn {
-    padding: 8px 16px;
+    padding: 4% 10%;
     background: transparent;
     color: rgba(255, 255, 255, 0.8);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -337,8 +337,8 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .signup-box {
-        padding: 40px 30px;
-        margin: 0 20px;
+        padding: 40% 30%;
+        margin: 0 20%;
     }
 
     .signup-box h1 {
@@ -389,9 +389,5 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-  }
-
-  .main-container {
-    padding-bottom: 120px; /* space so box doesn’t overlap footer */
   }
 }

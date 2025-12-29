@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Press Kit — Animal Mystery Crew</title>
+    <link rel="icon" href="assets/images/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://use.typekit.net/jsx5cbs.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+          /* Minimal, local adjustments for presskit layout */
+          html,body{height:100%}
+          /* Account for global fixed header (70px) and footer (~95px)
+              so content isn't covered by them. */
+          body{min-height:100vh;display:flex;flex-direction:column;margin:0;padding-top:70px;padding-bottom:110px}
+        main{flex:1}
+        .press-hero{display:flex;gap:2rem;align-items:center;padding:4rem 2rem}
+        .press-hero .meta{max-width:640px}
+        .badge{display:inline-block;background:#ff70a5;color:white;padding:.25rem .6rem;border-radius:999px;font-weight:700}
+        .assets-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+        /* Use contain so screenshots are not zoomed/cropped; keep responsive sizing */
+        .screenshot{width:100%;height:auto;max-height:360px;object-fit:contain;background:#222;border-radius:6px;padding:.5rem}
+        .section{padding:2rem}
+        .fact-row{display:flex;gap:1.5rem;flex-wrap:wrap}
+        .fact{min-width:160px}
+        .download-btn{display:inline-block;background:#111;color:#fff;padding:.6rem 1rem;border-radius:6px;text-decoration:none}
+        /* Footer and mail styling */
+        footer{padding:1.5rem 2rem;background:#111217;color:#e6e6e6}
+        a.mailto-link{color:#ff70a5}
+    </style>
+</head>
+<body>
+    <header style="padding:1rem 2rem;display:flex;align-items:center;gap:1rem;">
+        <img src="assets/images/logo.png" alt="Digital Umami" style="height:48px;" onerror="this.style.display='none'">
+        <h1 style="font-size:1.15rem;margin:0">Press Kit — Animal Mystery Crew</h1>
+    </header>
+
+    <main>
+        <section class="press-hero section">
+            <div style="flex:1">
+                <div class="badge">Alpha</div>
+                <h2 style="margin-top:.6rem;margin-bottom:.4rem">Animal Mystery Crew</h2>
+                <p class="meta">Live your Capybara Detective dream in Animal Mystery Crew! Crack every quirky case through peculiar problems and absurdist intrigue. Use evidence and interrogation to solve the different mysteries in the park!</p>
+                <div style="margin-top:1rem;display:flex;gap:.75rem;flex-wrap:wrap">
+                    <a href="https://store.steampowered.com/app/3883040/Animal_Mystery_Crew/" target="_blank" rel="noopener noreferrer" class="download-btn">Wishlist on Steam</a>
+                    <a href="assets/press/AnimalMysteryCrew_PressAssets.zip" class="download-btn">Download Press Assets (ZIP)</a>
+                </div>
+            </div>
+            <div style="width:360px;flex-shrink:0">
+                <img src="assets/press/store_capsule_header.png" alt="Key art placeholder" style="width:100%;border-radius:8px;background:#111;height:220px;object-fit:cover">
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Quick Facts</h3>
+            <div class="fact-row" style="margin-top:.5rem">
+                <div class="fact"><strong>Developer:</strong> Digital Umami</div>
+                <div class="fact"><strong>Platforms:</strong> Windows, macOS (TBD)</div>
+                <div class="fact"><strong>Genre:</strong> Narrative Puzzle Adventure</div>
+                <div class="fact"><strong>Release:</strong> 2026 (estimated)</div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Features</h3>
+            <ul>
+                <li>Story-driven mysteries with branching choices</li>
+                <li>Hand-crafted island environments to explore</li>
+                <li>Charming animal characters with unique abilities</li>
+                <li>Accessible puzzles — designed for narrative flow</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h3>Screenshots & Logos</h3>
+            <div class="assets-grid" style="margin-top:.75rem">
+                <img src="assets/press/screen1.png" alt="Screenshot 1" class="screenshot">
+                <img src="assets/press/screen2.png" alt="Screenshot 2" class="screenshot">
+                <img src="assets/press/screen3.png" alt="Screenshot 3" class="screenshot">
+                <img src="assets/press/gamelogo.png" alt="Logo (horizontal)" class="screenshot" style="height:100px;object-fit:contain;background:transparent;padding:1rem">
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Trailer</h3>
+            <div style="max-width:900px;margin-top:.75rem">
+                <iframe width="100%" height="480" src="https://youtu.be/eShs2VpwYvE" title="Game Trailer" frameborder="0" allowfullscreen style="background:#000"></iframe>
+            </div>
+        </section>
+
+        <section class="section">
+            <h3>Press Contact</h3>
+            <p>If you'd like assets, interviews, or a demo build, contact:</p>
+            <p><strong>Digital Umami</strong><br>
+            Email: <a class="mailto-link" href="mailto:games@digitalumami.co.uk">games@digitalumami.co.uk</a></p>
+        </section>
+
+        <section class="section">
+            <h3>Developer Bio</h3>
+            <p>Digital Umami is an independent studio crafting cosy, story-first games. We focus on character-driven narratives and accessible gameplay experiences that appeal to players seeking warmth and curiosity.</p>
+        </section>
+
+        <section class="section">
+            <h3>How to Use This Press Kit</h3>
+            <ol>
+                <li>Download the Press Assets ZIP (logos, screenshots, key art, high res images).</li>
+                <li>Use the provided captions and image filenames for attribution.</li>
+                <li>Contact the press email for interview requests or review/demo keys.</li>
+            </ol>
+        </section>
+        <br>
+        <br>
+        <br>
+        <br>
+    </main>
+
+    <footer>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>© Digital Umami</div>
+            <div><a href="privacy-policy.html" style="color:inherit">Privacy Policy</a></div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Umami - Join Our Newsletter</title>
+    <link rel="icon" href="assets/images/logo.ico" type="x-icon">   
+    <link rel="stylesheet" href="https://use.typekit.net/jsx5cbs.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mailer_styles.css">
+</head>
+<body>
+    <!-- Background -->
+    <div class="background-image" style="background-image: url('assets/images/amc/background.png');"></div>
+    
+    <!-- Bokeh Effect -->
+    <div class="bokeh-container">
+        <div class="bokeh bokeh-1"></div>
+        <div class="bokeh bokeh-2"></div>
+        <div class="bokeh bokeh-3"></div>
+        <div class="bokeh bokeh-4"></div>
+        <div class="bokeh bokeh-5"></div>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <img src="assets/images/logo.png" alt="Digital Umami" class="logo" id="logo" 
+             onerror="this.onerror=null; this.src='assets/images/logo.png';">
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-container">
+        <div class="signup-box">
+            <h1><img src="assets/images/amc/gamelogo.png" alt="Animal Mystery Crew" class="gamelogo" id="gamelogo" onerror="this.onerror=null; this.src='assets/images/gamelogo.png';"></h1>
+            <p>
+            Our Steam page is live! 🎉 You can now wishlist Animal Mystery Crew and help us reach more players. Your support means the world to us as we continue developing the game! 🙌 
+            <br>
+            <br>Click the button below to wishlist Animal Mystery Crew on Steam.
+            <br>
+            <br>
+    <style type="text/css">@import url("https://assets.mlcdn.com/fonts.css?version=1755079");</style>
+        <div class="cta" style="margin-top:18px;">
+                <a href="https://store.steampowered.com/app/3883040/Animal_Mystery_Crew/" class="signup-btn" target="_blank" rel="noopener noreferrer">Wishlist now!</a>
+        </div>
+            </p>
+            <br>
+            <br>
+            <div class="consent-text">
+                   Join our 📨 <a href="newletter.html">newsletter</a> to save your spot in our beta and hear all about development!
+            </div>
+    </div>
+</div>
+
+    <!-- Footer -->
+    <footer>
+        <div style="display: flex; gap: 5%; align-items: center;">
+            <a href="mailto:games@digitalumami.co.uk" class="footer-email">games@digitalumami.co.uk</a>
+            <a href="#" class="footer-btn">Press Kit</a>
+        </div>
+        <div class="footer-buttons">
+            <a href="privacy-policy.html" class="footer-btn">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Handle form submission
+        document.getElementById('signupForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('emailInput').value;
+            const btn = document.querySelector('.signup-btn');
+            
+            // Simple email validation
+            if (email && email.includes('@')) {
+                btn.textContent = 'Thank you!';
+                btn.style.background = '#4CAF50';
+                
+                setTimeout(() => {
+                    btn.textContent = 'Join Newsletter';
+                    btn.style.background = '#ff70a5';
+                    document.getElementById('emailInput').value = '';
+                }, 3000);
+            }
+        });
+
+        // Logo placeholder - replace with actual logo upload
+        document.getElementById('logo').addEventListener('error', function() {
+            this.style.display = 'none';
+            const header = document.querySelector('header');
+            const logoText = document.createElement('div');
+            logoText.textContent = 'Digital Umami';
+            logoText.style.color = 'white';
+            logoText.style.fontSize = '1.5rem';
+            logoText.style.fontWeight = '700';
+            header.appendChild(logoText);
+        });
+    </script>
+</body>
+</html>

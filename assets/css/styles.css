@@ -321,6 +321,46 @@ footer {
     color: #ff70a5;
 }
 
+/* Navigation Container */
+.nav-container {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.nav-box {
+    transform: scale(0.85);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 2% 2%;
+    max-width: 40%;
+    min-width: 300px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(255, 112, 165, 0.2);
+    border: 1px solid rgba(255, 112, 165, 0.1);
+    color: #000;
+    opacity: 0.95;
+}
+
+.nav-box h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin-bottom: 0.5%;
+    color: #000;
+    letter-spacing: -0.02em;
+}
+
+.nav-box p {
+    font-size: 1.1rem;
+    margin-bottom: 2%;
+    color: #333;
+    line-height: 1.6;
+    font-weight: 400;
+}
+
 /* Animations */
 @keyframes float {
     0%, 100% { 
@@ -374,6 +414,25 @@ footer {
     }
 
     .signup-box p {
+        font-size: 1rem;
+    }
+
+    .nav-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .nav-box {
+        max-width: 90%;
+        min-width: auto;
+        padding: 30px 20px;
+    }
+
+    .nav-box h1 {
+        font-size: 2rem;
+    }
+
+    .nav-box p {
         font-size: 1rem;
     }
 

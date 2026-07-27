@@ -13,7 +13,7 @@ Website:            https://digitalumami.github.io/gmbl.html
 Steam Store Page:   https://store.steampowered.com/app/4632620/Gamble_Inc/
 Price:              $3.99 / £3.99 / €3.99
 ESRB / Rating:      Rating Pending
-Contact:    [digitalumamigames@gmail.com]
+Contact:    	    [digitalumamigames@gmail.com]
 Socials:            Twitter/X: https://x.com/digitalumami_
                     Bluesky: https://bsky.app/profile/digitalumami.bsky.social
                     Discord: https://discord.gg/2GsAWSz4WR
@@ -24,7 +24,6 @@ Socials:            Twitter/X: https://x.com/digitalumami_
 -------------------------------------------------------------------------------
 A node-busting incremental game based on the fantasy of hacking a corporate slot machine, making enough money to escape the "matrix"
 
-Steam short description:
 Tired of making money for your corporate overlords while you get paid peanuts? 
 Hack into your work computer and syphon cash straight from the slots and into 
 your bank! In this corporate dystopia, jobs have been reduced to betting all 
